@@ -1,6 +1,7 @@
 package com.olmez.ceilingfan.model.services.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.olmez.ceilingfan.model.data.CeilingFan;
 import com.olmez.ceilingfan.model.data.FanDirection;
@@ -11,6 +12,7 @@ import com.olmez.ceilingfan.model.services.CeilingService;
 public class CeilingServiceImpl implements CeilingService {
 
     @Override
+    @Transactional
     public CeilingFan changeFanSpeed(CeilingFan fan) {
         if (fan == null) {
             return null;
@@ -35,6 +37,7 @@ public class CeilingServiceImpl implements CeilingService {
     }
 
     @Override
+    @Transactional
     public CeilingFan changeFanDirection(CeilingFan fan) {
         if (fan == null) {
             return null;
